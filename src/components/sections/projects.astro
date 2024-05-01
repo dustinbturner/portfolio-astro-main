@@ -1,0 +1,35 @@
+---
+import ProjectCard from "@/components/cards/project-card.astro";
+import { getProjects } from "@/lib/fetchers";
+
+import HeaderSection from "./header-section.astro";
+const projects = await getProjects();
+---
+
+<section class="container flex flex-col max-w-8xl pb-24 gap-10">
+    <HeaderSection
+      label="Projects"
+      title="View recent case studies."
+      subtitle="A collection of my recent machine learning projects."
+    />
+
+    {
+      projects?.length ? (
+        <div class="grid gap-8 md:grid-cols-2 md:gap-8 ">
+          {projects.map((project) => (
+            <ProjectCard {...project} />
+          ))}
+        </div>
+      ) : (
+        <p>No projects published.</p>
+      )
+    }
+  </section>
+  <section class="flex justify-center">
+    <div class="divider-wrapper pb-0">
+      <div class="container-default mx-auto">
+        <div class="divider h-0"></div>
+        <img src="https://assets-global.website-files.com/65e1a87a9f13ad3aa4c3304f/65fd981e8f327d6ac2349a7f_Lights.svg" loading="lazy" alt="" class="divider-lighting">
+      </div>
+    </div>
+  </section>

@@ -1,0 +1,69 @@
+---
+import { Badge } from "@/components/ui/badge";
+import { buttonVariants } from "@/components/ui/button";
+import { cn, formatDate } from "@/lib/utils";
+import { Icon } from "astro-icon/components";
+import { Image } from "astro:assets";
+import type { CollectionEntry } from "astro:content";
+import MainLayout from "./main-layout.astro";
+import { DashboardTableOfContents } from "@/components/toc";
+import { getTableOfContents } from "@/lib/toc";
+
+type Props = CollectionEntry<"blog">;
+
+const project = Astro.props;
+const slug = Astro.props.slug;
+const { title, description, pubDate, updatedDate, cover, category } = Astro.props.data;
+const toc = await getTableOfContents(project.body);
+---
+
+<MainLayout title={title} description={description}>
+  <main class="container max-w-6xl py-6 lg:grid lg:grid-cols-[1fr_300px] lg:gap-10 lg:py-10 xl:gap-20">
+    <button
+      onclick="history.back()"
+      class={cn(
+        buttonVariants({ variant: "ghost" }),
+        "absolute left-[-200px] top-10 hidden xl:inline-flex text-muted-foreground"
+      )}
+      transition:animate="slide"
+    >
+      <Icon name="lucide:chevron-left" class="mr-2 size-4" />
+      Back
+    </button>
+    <article class="prose dark:prose-invert max-w-none">
+      <a href={`/blog/category/${category}`} transition:name={`badge-cat-${slug}`}>
+        <Badge radius="md" className="capitalize">
+          {category}
+        </Badge>
+      </a>
+      <Image
+        class="rounded-xl overflow-hidden my-6"
+        width={720}
+        height={360}
+        src={cover}
+        alt={title}
+        transition:name={`img-${slug}`}
+      />
+      <div class="flex items-center justify-between my-6">
+        <span class="font-medium text-xs text-muted-foreground" transition:name={`date-${slug}`}>
+          {formatDate(pubDate)}
+          {updatedDate && <span>- Last updated on {formatDate(updatedDate)}</span>}
+        </span>
+      </div>
+      <h1 class="font-heading text-4xl my-4" transition:name={`title-${slug}`}>
+        {title}
+      </h1>
+      <p>{description}</p>
+      <hr class="my-6" />
+      <slot />
+    </article>
+    <div class="hidden text-sm lg:block">
+      <div
+        class="sticky top-18 -mt-10 max-h-[calc(var(--vh)-4rem)] overflow-y-auto pt-10"
+        transition:animate="slide"
+      >
+        <DashboardTableOfContents toc={toc} client:load />
+      </div>
+    </div>
+  </main>
+</MainLayout>

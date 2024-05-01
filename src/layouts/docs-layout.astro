@@ -1,0 +1,126 @@
+---
+import Footer from "@/components/layout/footer.astro";
+import Header from "@/components/layout/header.astro";
+import { MainNavigationMenu } from "@/components/main-navigation-menu";
+import { siteConfig } from "@/config/site";
+import { Icon } from "astro-icon/components";
+import BaseLayout from "./base-layout.astro";
+import { SheetMobileNav } from "@/components/layout/sheet-mobile-nav";
+import { navMenuConfig } from "@/config/nav-menu";
+import { docsConfig } from "@/config/docs";
+import Search from "astro-pagefind/components/Search";
+
+// import MainNav from "@/components/layout/main-nav.astro";
+
+type Props = {
+  title: string;
+  description: string;
+};
+
+const { title, description } = Astro.props;
+---
+
+<BaseLayout title={title} description={description}>
+  <Header className="border-b">
+    <!-- if using only normals links  -->
+    <!-- <MainNav items={docsConfig.mainNav} slot="left-header" />
+    <SheetMobileNav
+      mainNavItems={[...docsConfig.mainNav]}
+      sidebarNavItems={[...docsConfig.sidebarNav]}
+      slot="mobile-nav-header"
+      client:load
+    /> -->
+
+    <!-- if use Navigation Menu on desktop -->
+    <MainNavigationMenu slot="left-header" client:load />
+    <SheetMobileNav
+      mainNavItems={[...navMenuConfig.links]}
+      sidebarNavItems={[
+        // ...navMenuConfig.pagesNav,
+        // ...navMenuConfig.examplesNav,
+        ...docsConfig.sidebarNav,
+      ]}
+      slot="mobile-nav-header"
+      client:load
+    />
+
+    <div class="flex items-center justify-center my-auto gap-x-4" slot="right-header">
+      <Search id="search" className="pagefind-ui flex-grow" uiOptions={{ showImages: false }} />
+      <a
+          href={siteConfig.links.kaggle}
+          aria-label="Visit my Kaggle profile"
+          rel="noreferrer"
+          class="font-medium underline underline-offset-4"
+      >
+          <Icon name="kaggle" class="size-8" />
+      </a>
+      <a
+          href={siteConfig.links.github}
+          aria-label="Visit my Github profile"
+          rel="noreferrer"
+          class="font-medium underline underline-offset-4"
+      >
+          <Icon name="github" class="size-5" />
+      </a>
+  </div>
+  </Header>
+
+  <slot />
+
+  <Footer className="border-t" />
+</BaseLayout>
+
+
+
+<style is:global>
+  /* nav {
+    display: grid;
+    place-items: center;
+    align-items: center;
+  } */
+
+  .pagefind-ui {
+    --pagefind-ui-scale: 0.6;
+    --pagefind-ui-primary: white;
+    --pagefind-ui-text: #f8f8f8;
+    --pagefind-ui-border: #d8d8d8;
+    --pagefind-ui-border-width: 1px;
+    --pagefind-ui-border-radius: 0.3rem;
+    --pagefind-ui-font: sans-serif;
+
+    width: 300px;
+    height: 20px;
+  }
+
+  .pagefind-ui {
+    --pagefind-ui-background: #121212;
+    
+  }
+
+  .pagefind-ui .pagefind-ui__drawer:not(.pagefind-ui__hidden) {
+    position: absolute;
+    width: calc(2 * 300px);
+    font-size: 16px;
+    left: 0;
+    right: 0;
+    font-size: 20px;
+    margin-top: 0px;
+    z-index: 9999;
+    padding: 0 2em 1em;
+    overflow-y: auto;
+    box-shadow:
+      0 10px 10px -5px rgba(0, 0, 0, 0.2),
+      0 2px 2px 0 rgba(0, 0, 0, 0.1);
+    border-bottom-right-radius: var(--pagefind-ui-border-radius);
+    border-bottom-left-radius: var(--pagefind-ui-border-radius);
+    background-color: var(--pagefind-ui-background);
+  }
+
+  .pagefind-ui .pagefind-ui__result-link {
+    color: var(--pagefind-ui-primary);
+  }
+
+  .pagefind-ui .pagefind-ui__result-excerpt {
+    color: var(--pagefind-ui-text);
+  }
+</style>

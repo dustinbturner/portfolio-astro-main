@@ -1,0 +1,29 @@
+---
+import ProjectCard from "@/components/cards/project-card.astro";
+import DocsPageHeader from "@/components/page-header.astro";
+import DocsLayout from "@/layouts/docs-layout.astro";
+import { getProjects } from "@/lib/fetchers";
+
+export const prerender = true;
+
+const projects = await getProjects();
+---
+
+<DocsLayout title="Projects" description="Recent case studies of my machine learning projects.">
+  <div class="min-h-screen flex flex-col">
+    <main class="flex-grow">
+      <section class="container py-16">
+        <DocsPageHeader heading="Projects" text="Recent case studies of my machine learning projects." />
+        {projects?.length ? (
+          <div class="grid gap-4 md:grid-cols-2 bg-muted/20 md:gap-6">
+            {projects.map((project) => (
+              <ProjectCard {...project} />
+            ))}
+          </div>
+        ) : (
+          <p>No projects published.</p>
+        )}
+      </section>
+    </main>
+  </div>
+</DocsLayout>

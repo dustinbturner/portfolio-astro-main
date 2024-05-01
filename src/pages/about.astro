@@ -1,0 +1,45 @@
+---
+import { Button } from "@/components/ui/button";
+import MainLayout from "@/layouts/main-layout.astro";
+---
+
+<MainLayout title="About" description="Lorem ipsum dolor sit amet">
+  <div class="min-h-screen flex flex-col">
+    <main class="flex-grow">
+      <section>
+        <div class="px-8 py-24 mx-auto md:px-12 lg:px-32 max-w-7xl">
+          <div class="grid items-center grid-cols-1 gap-6 lg:grid-cols-2 lg:gap-24">
+            <div class="md:order-first">
+              <h1 class="text-4xl font-heading font-semibold text-white">
+                Machine Learning Engineer <span class="text-neutral-300">with a finance concentration.</span>
+              </h1>
+              <p class="mt-6 text-base font-small text-neutral-400">
+                My journey has been unique, to say the least.
+              </p>
+              <p class="mt-6 text-base font-small text-neutral-400">
+                In my 10 years in the Army, I was regularly entrusted with challenging roles. This developed my leadership skills but also enabled me to teach, coach, and mentor both peers and subordinates effectively.
+              </p>
+              <p class="mt-6 text-base font-small text-neutral-400">
+                While at Gartner, I had a front-row seat to the transformative power of technology. I collaborated closely with C-suite executives and tactical level teams, helping them navigate the seismic shifts brought on by COVID.
+              </p>
+              <p class="mt-6 text-base font-small text-neutral-400">
+                As I step into my next career phase, I'm focused on data science, machine learning, and AI. I'm eager to see how these tools can change things for the better.
+              </p>
+              <p class="mt-6 mb-6 text-base font-small text-neutral-400">
+                Let's connect and explore how we can drive success together.
+              </p>
+
+              <a href="mailto:dustin@dustinbturner.com"><Button>Email Me</Button></a>
+              
+            </div>
+            <div class="order-first block w-full mt-12 aspect-square lg:mt-0">
+              <div class="h-full overflow-hidden border shadow-sm bg-neutral-950 rounded-3xl">
+                <img alt="#\_" class="relative w-full rounded-2xl drop-shadow-2xl" src="/photo.png">
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+  </div>
+</MainLayout>
