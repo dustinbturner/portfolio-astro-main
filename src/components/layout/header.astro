@@ -34,12 +34,12 @@ const { className } = Astro.props;
         <a class="inline-flex items-center gap-3 text-xl font-bold tracking-tight " href="/">
           <img class="max-h-10" src="/light-logo.svg" alt="logo">
         </a>
-        <!-- <button class="rounded-lg md:hidden focus:outline-none focus:shadow-outline" @click="open = !open">
+        <button class="rounded-lg md:hidden focus:outline-none focus:shadow-outline" @click="open = !open">
           <svg class="w-6 h-6" stroke="currentColor" fill="none" viewBox="0 0 24 24">
             <path :class="{'hidden': open, 'inline-flex': !open }" class="inline-flex" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
             <path :class="{'hidden': !open, 'inline-flex': open }" class="hidden" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
           </svg>
-        </button> -->
+        </button>
       </div>
       <nav :class="{'flex': open, 'hidden': !open}" class="flex-col items-center flex-grow hidden gap-6 p-4 px-5 text-xs font-sm text-neutral-400 md:px-0 md:pb-0 md:flex md:justify-start md:flex-row lg:p-0 md:mt-0">
         <a class="hover:text-white focus:outline-none focus:text-gray-500 md:ml-auto" href="/about">About
@@ -48,22 +48,10 @@ const { className } = Astro.props;
         </a>
         <a class="hover:text-white focus:outline-none focus:text-neutral-400" href="/projects">Projects
         </a>
-        
+        <a class="hover:text-white focus:outline-none focus:text-neutral-400" href="mailto:dustin@dustinbturner.com">Contact
+        </a>
 
-        
 
-                <!-- Search bar container -->
-                <div class="flex items-center justify-center">
-                  <!-- <div class="relative">
-                    <span class="absolute inset-y-0 left-0 flex items-center pl-3">
-                      <svg class="text-gray-400 size-5" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-                        <path d="M21 21L15 15M17 10C17 13.866 13.866 17 10 17C6.13401 17 3 13.866 3 10C3 6.13401 6.13401 3 10 3C13.866 3 17 6.13401 17 10Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
-                      </svg>
-                    </span>
-                    <input type="text" class="pagefind-ui w-full py-2 pl-10 pr-4 text-black bg-white border border-gray-200 focus:outline-none focus:ring focus:ring-opacity-40 focus:ring-blue-500 sm:text-sm rounded-md placeholder:text-gray-400 focus:border-blue-500 min-h-8" placeholder="Search" aria-label="Search">
-                  </div> -->
-                  <Search id="search" className="pagefind-ui mb-4" uiOptions={{ showImages: false }} />
-                </div>
       </nav>
     </div>
   </div>
