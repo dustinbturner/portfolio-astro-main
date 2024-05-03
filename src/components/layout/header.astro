@@ -1,8 +1,8 @@
 ---
 
 import { cn } from "@/lib/utils";
-
-import Search from "astro-pagefind/components/Search";
+import { Icon } from "astro-icon/components";
+import { siteConfig } from "@/config/site";
 
 type Props = {
   className?: string;
@@ -10,17 +10,6 @@ type Props = {
 
 const { className } = Astro.props;
 ---
-
-
-<div class="justify-center w-full mx-auto">
-  <div class="flex items-center justify-center h-10 text-white bg-gradient-to-t from-red-800 via-red-700 to-red-500">
-    <div class="flex items-center justify-center gap-2">
-      <div class="text-xs font-medium">
-        <span>This is heavily under construction. Updates daily.</span>
-      </div>
-    </div>
-  </div>
-</div>
 
 <header
   class={cn(
@@ -50,7 +39,22 @@ const { className } = Astro.props;
         </a>
         <a class="hover:text-white focus:outline-none focus:text-neutral-400" href="mailto:dustin@dustinbturner.com">Contact
         </a>
-
+          <a
+            href={siteConfig.links.github}
+            aria-label="Visit my Github profile"
+            rel="noreferrer"
+            class="font-medium underline underline-offset-4"
+          >
+            <Icon name="github" class="size-5" />
+          </a>
+          <a
+            href={siteConfig.links.kaggle}
+            aria-label="Visit my Kaggle profile"
+            rel="noreferrer"
+            class="font-medium underline underline-offset-4"
+          >
+            <Icon name="kaggle" class="size-8" />
+          </a>
 
       </nav>
     </div>
