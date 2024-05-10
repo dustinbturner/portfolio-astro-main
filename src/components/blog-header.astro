@@ -4,7 +4,6 @@ import { getCategories } from "@/lib/fetchers";
 import { cn } from "@/lib/utils";
 
 
-
 const categories = await getCategories();
 
 type Props = {
@@ -15,8 +14,13 @@ const { title } = Astro.props;
 const { category } = Astro.params;
 ---
 
-<h1 data-pagefind-body class="inline-block font-heading text-4xl">{title}</h1>
-<p class="text-md text-neutral-400 mb-8">Writing on personal, professional, and productivity topics.</p>
+
+<div>
+  <h1 data-pagefind-body class="inline-block font-heading text-4xl">{title}</h1>
+  <p class="text-md text-neutral-400 mb-8">Writing on personal, professional, and productivity topics.</p>
+
+</div>
+
 
 
 
@@ -57,6 +61,6 @@ const { category } = Astro.params;
       <div />
     )
   }
-</div>
+
 
 <hr class="mb-7" />
