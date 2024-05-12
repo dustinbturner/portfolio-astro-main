@@ -3,20 +3,19 @@ import BentoGrid from "@/components/sections/bentogrid.astro";
 import Analysis from "@/components/sections/analysis.astro";
 import Projects from "@/components/sections/projects.astro";
 import HeroLanding from "@/components/sections/hero-landing.astro";
+import Testimonials from "@/components/sections/testimonials.astro";
+import MainLayout from "@/layouts/main-layout.astro";
+import Articles from "@/components/sections/articles.astro";
 
 // import InfoLanding from "@/components/sections/info-landing.astro";
 // import PreviewLanding from "@/components/sections/preview-landing.astro";
-import Testimonials from "@/components/sections/testimonials.astro";
 // import { infos } from "@/config/landing";
-import MainLayout from "@/layouts/main-layout.astro";
-import Articles from "@/components/sections/articles.astro";
 ---
 
 <MainLayout title="Home ">
   <HeroLanding />
   <!-- <PreviewLanding /> -->
   <Projects />
- 
   <Articles />
   <!-- <Analysis /> -->
   <Testimonials />

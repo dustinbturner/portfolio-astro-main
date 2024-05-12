@@ -4,72 +4,78 @@ import { buttonVariants } from "@/components/ui/button";
 import { Icon } from "astro-icon/components";
 import { siteConfig } from "@/config/site";
 import { Badge } from "../ui/badge";
-
-
 ---
 
 <section class="space-y-6 py-12 sm:py-20 lg:py-20">
   <div class="container flex max-w-5xl flex-col items-center gap-4 text-center">
-    <Badge radius="md" className="uppercase tracking-widest text-neutral-300" variant="hero">
+    <Badge
+      radius="md"
+      className="uppercase tracking-widest text-neutral-300"
+      variant="hero"
+    >
       fintech & financial services
     </Badge>
 
-    <h1 class="text-balance font-heading text-9xl sm:text-5xl md:text-6xl lg:text-[66px] flex flex-col items-center">
-      <span class="gradient-text text-7xl sm:text-3xl md:text-5xl lg:text-[66px] text-white font-extrabold">
-        Machine Learning <br> Engineer
+    <h1
+      class="text-balance font-heading text-9xl sm:text-5xl md:text-6xl lg:text-[66px] flex flex-col items-center"
+    >
+      <span
+        class="gradient-text text-7xl sm:text-3xl md:text-5xl lg:text-[66px] text-white font-extrabold"
+      >
+        Machine Learning <br /> Engineer
       </span>
     </h1>
-    
 
     <p
       class="max-w-2xl text-balance leading-normal text-muted-foreground sm:text-md sm:leading-6"
     >
-      I help business leaders use data and implement machine learning techniques to mitigate risk, improve efficiency, and drive innovation.
+      I help business leaders use data and implement machine learning techniques
+      to mitigate risk, improve efficiency, and drive innovation.
     </p>
 
     <div class="flex flex-col items-center space-y-4">
       <div class="flex justify-center space-x-2 md:space-x-4">
         <a
           href="/projects"
-          class={cn(buttonVariants({ variant: "link", size: "sm" }), "flex items-center gap-2")}
+          class={cn(
+            buttonVariants({ variant: "link", size: "sm" }),
+            "flex items-center gap-2"
+          )}
         >
           <span>View Projects</span>
           <Icon name="lucide:arrow-right" class="size-4" />
         </a>
         <a
           href="/blog"
-          class={cn(buttonVariants({ variant: "link", size: "sm" }), "flex items-center gap-2")}
+          class={cn(
+            buttonVariants({ variant: "link", size: "sm" }),
+            "flex items-center gap-2"
+          )}
         >
           <span>View Writing</span>
           <Icon name="lucide:arrow-right" class="size-4" />
         </a>
       </div>
-      </div>
     </div>
   </div>
 </section>
 
-
 <section>
   <div class="relative px-8 pb-16 mx-auto md:px-12 lg:px-32 max-w-7xl">
- 
     <div class="relative flex flex-wrap justify-center mt-12">
-      <div class="grid justify-between w-full">
-
-      </div>
+      <div class="grid justify-between w-full"></div>
       <div class="relative flex justify-center col-span-1 px-8">
-        <img class="max-h-8" src="/PYTHON.svg" alt="logo">
+        <img class="max-h-8" src="/PYTHON.svg" alt="logo" />
       </div>
       <div class="flex justify-center col-span-1 px-8">
-        <img class="max-h-8" src="/cpp.svg" alt="logo">
+        <img class="max-h-8" src="/cpp.svg" alt="logo" />
       </div>
       <div class="flex justify-center col-span-1 px-8">
-        <img class="max-h-8" src="/PYTORCH.svg" alt="logo">
+        <img class="max-h-8" src="/PYTORCH.svg" alt="logo" />
       </div>
       <div class="flex justify-center col-span-1 px-8">
-        <img class="max-h-8" src="/TENSORFLOW.svg" alt="logo">
+        <img class="max-h-8" src="/TENSORFLOW.svg" alt="logo" />
       </div>
-
     </div>
   </div>
 </section>
@@ -77,13 +83,12 @@ import { Badge } from "../ui/badge";
   <div class="divider-wrapper pb-0">
     <div class="container-default mx-auto">
       <div class="divider h-0"></div>
-      <img src="https://assets-global.website-files.com/65e1a87a9f13ad3aa4c3304f/65fd981e8f327d6ac2349a7f_Lights.svg" loading="lazy" alt="" class="divider-lighting">
+      <img
+        src="https://assets-global.website-files.com/65e1a87a9f13ad3aa4c3304f/65fd981e8f327d6ac2349a7f_Lights.svg"
+        loading="lazy"
+        alt=""
+        class="divider-lighting"
+      />
     </div>
   </div>
 </section>
-
-
-
-
-
-
