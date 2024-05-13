@@ -2,7 +2,7 @@
 import { cn } from "@/lib/utils";
 import { Icon } from "astro-icon/components";
 import { siteConfig } from "@/config/site";
-import Search from "astro-pagefind/components/Search";
+// import Search from "astro-pagefind/components/Search";
 
 type Props = {
   className?: string;
@@ -30,7 +30,7 @@ const { className } = Astro.props;
           </svg>
         </button>
       </div>
-      <nav :class="{'flex': open, 'hidden': !open}" class="flex-col items-center flex-grow hidden gap-6 p-4 px-5 text-xs font-sm text-neutral-400 md:px-0 md:pb-0 md:flex md:items-center md:justify-start md:flex-row lg:p-0 md:mt-0">
+      <nav :class="{'flex': open, 'hidden': !open}" class="flex-col items-center flex-grow hidden gap-6 p-4 px-5 text-xs font-sm text-neutral-400 md:px-0 md:pb-0 md:flex md:items-center md:justify-center md:flex-row lg:p-0 md:mt-0">
         <a class="hover:text-white focus:outline-none focus:text-gray-500 md:ml-auto" href="/about">About</a>
         <a class="hover:text-white focus:outline-none focus:text-neutral-400" href="/blog">Writing</a>
         <a class="hover:text-white focus:outline-none focus:text-neutral-400" href="/projects">Projects</a>
@@ -46,7 +46,7 @@ const { className } = Astro.props;
            class="font-medium underline underline-offset-4">
             <Icon name="kaggle" class="size-8" />
         </a>
-        <Search id="search" className="pagefind-ui" uiOptions={{ showImages: false }} />
+        <!-- <Search id="search" className="pagefind-ui" uiOptions={{ showImages: false }} /> -->
     </nav>
     </div>
   </div>
