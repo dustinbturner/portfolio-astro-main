@@ -22,11 +22,7 @@ const { title, description, bodyClass } = Astro.props;
     <Fathom site="SMFASZQT" />
   </head>
   <body class={cn("flex flex-col min-h-screen relative", bodyClass)}>
-    <div class="fixed inset-0 bg-cover bg-center" style="background-image: url('/bg_noise.svg'), url('/bglight.svg');
-                                                        background-position: center, top center;
-                                                        background-repeat: no-repeat, no-repeat;
-                                                        background-size: cover, auto 100%;">
-    </div>
+
     <div class="relative z-10">
       <slot />
     </div>
