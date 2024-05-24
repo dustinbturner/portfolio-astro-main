@@ -6,6 +6,7 @@ import { cn } from "@/lib/utils";
 import BaseLayout from "./base-layout.astro";
 import { SheetMobileNav } from "@/components/layout/sheet-mobile-nav";
 import { navMenuConfig } from "@/config/nav-menu";
+import Search from "astro-pagefind/components/Search";
 
 
 import { siteConfig } from "@/config/site";
@@ -38,7 +39,7 @@ const { title, description, mainClass } = Astro.props;
     />
 
     <div class="flex items-center justify-center my-auto gap-x-4" slot="right-header">
-
+            <Search id="search" className="pagefind-ui flex-grow" uiOptions={{ showImages: false }} />
       <a
           href={siteConfig.links.kaggle}
           aria-label="Visit my Kaggle profile"
