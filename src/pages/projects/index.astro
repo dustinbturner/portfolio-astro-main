@@ -9,11 +9,11 @@ export const prerender = true;
 const projects = await getProjects();
 ---
 
-<DocsLayout title="Projects" description="Recent case studies of my machine learning projects.">
+<DocsLayout title="Projects" description="Recent case studies of my projects.">
   <div data-pagefind-body class="min-h-screen flex flex-col">
     <main class="flex-grow">
       <section class="container py-16">
-        <DocsPageHeader heading="Projects" text="Recent case studies of my machine learning projects." />
+        <DocsPageHeader heading="Projects" text="Recent case studies of my projects." />
         {projects?.length ? (
           <div class="grid gap-4 md:grid-cols-2 bg-muted/20 md:gap-6">
             {projects.map((project) => (
